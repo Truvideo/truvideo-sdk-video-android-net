@@ -1,0 +1,142 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <Version>0.0.1</Version>
+        <TargetFramework>net8.0-android</TargetFramework>
+        <SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <IsBindingProject>true</IsBindingProject>
+        <RepositoryUrl>https://github.com/Truvideo/truvideo-sdk-video-android-net</RepositoryUrl>
+        <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">24.0</SupportedOSPlatformVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <NLIGradleProjectReference Include="../TruVideoVideoAndroid">
+            <ModuleName>TruvideoVideo</ModuleName>
+            <!-- Metadata applicable to @(AndroidLibrary) will be used if set, otherwise the following defaults will be used:
+            <Bind>true</Bind>
+            <Pack>true</Pack>
+            -->
+        </NLIGradleProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)"/>
+        <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)"/>
+        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0"/>
+    </ItemGroup>
+
+    <!--    Video Module Jar/aar-->
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <AndroidLibrary Include="..\TruVideoVideoAndroid/TruvideoVideo/libs\truvideo-sdk-android-video-76.2.5.aar">
+            <Bind>false</Bind>
+            <Visible>false</Visible>
+        </AndroidLibrary>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <AndroidLibrary Include="..\TruVideoVideoAndroid/TruvideoVideo/libs\truvideo-sdk-android-krisp-1.0.0.aar">
+            <Bind>false</Bind>
+            <Visible>false</Visible>
+        </AndroidLibrary>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <AndroidLibrary Include="..\TruVideoVideoAndroid/TruvideoVideo/libs\media3-exoplayer-1.4.1.aar">
+            <Bind>false</Bind>
+            <Visible>false</Visible>
+        </AndroidLibrary>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <AndroidLibrary Include="..\TruVideoVideoAndroid/TruvideoVideo/libs\media3-common-1.4.1.aar">
+            <Bind>false</Bind>
+            <Visible>false</Visible>
+        </AndroidLibrary>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <AndroidLibrary Include="..\TruVideoVideoAndroid/TruvideoVideo/libs\media3-container-1.4.1.aar">
+            <Bind>false</Bind>
+            <Visible>false</Visible>
+        </AndroidLibrary>
+    </ItemGroup>
+
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <AndroidLibrary Include="..\TruVideoVideoAndroid/TruvideoVideo/libs\media3-database-1.4.1.aar">
+            <Bind>false</Bind>
+            <Visible>false</Visible>
+        </AndroidLibrary>
+    </ItemGroup>
+
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <AndroidLibrary Include="..\TruVideoVideoAndroid/TruvideoVideo/libs\media3-datasource-1.4.1.aar">
+            <Bind>false</Bind>
+            <Visible>false</Visible>
+        </AndroidLibrary>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <AndroidLibrary Include="..\TruVideoVideoAndroid/TruvideoVideo/libs\media3-decoder-1.4.1.aar">
+            <Bind>false</Bind>
+            <Visible>false</Visible>
+        </AndroidLibrary>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <AndroidLibrary Include="..\TruVideoVideoAndroid/TruvideoVideo/libs\media3-extractor-1.4.1.aar">
+            <Bind>false</Bind>
+            <Visible>false</Visible>
+        </AndroidLibrary>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <AndroidLibrary Include="..\TruVideoVideoAndroid/TruvideoVideo/libs\media3-ui-1.4.1.aar">
+            <Bind>false</Bind>
+            <Visible>false</Visible>
+        </AndroidLibrary>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <AndroidLibrary Include="..\TruVideoVideoAndroid/TruvideoVideo/libs\ffmpeg-kit-full-6.0-2.aar">
+            <Bind>false</Bind>
+            <Visible>false</Visible>
+        </AndroidLibrary>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <AndroidLibrary Include="..\TruVideoVideoAndroid/TruvideoVideo/libs\smart-exception-common-0.2.1.jar">
+            <Bind>false</Bind>
+            <Visible>false</Visible>
+        </AndroidLibrary>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <AndroidLibrary Include="..\TruVideoVideoAndroid/TruvideoVideo/libs\smart-exception-java-0.2.1.jar">
+            <Bind>false</Bind>
+            <Visible>false</Visible>
+        </AndroidLibrary>
+    </ItemGroup>
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <AndroidLibrary Include="..\TruVideoVideoAndroid/TruvideoVideo/libs\compose-1.0.0-beta01.aar">
+            <Bind>false</Bind>
+            <Visible>false</Visible>
+        </AndroidLibrary>
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework.Contains('android'))">
+        <AndroidLibrary Include="..\TruVideoVideoAndroid/TruvideoVideo/libs\ktx-1.0.0-beta01.aar">
+            <Bind>false</Bind>
+            <Visible>false</Visible>
+        </AndroidLibrary>
+    </ItemGroup>
+
+
+    <!--    Video Module Jar/aar-->
+    
+    <!-- Reference to NuGet for building bindings -->
+    <ItemGroup>
+        <PackageReference Include="CommunityToolkit.Maui.NativeLibraryInterop.BuildTasks" Version="0.0.1-pre1"/>
+    </ItemGroup>
+</Project>

@@ -1,0 +1,9 @@
+
+TruVideoVideoAndroidBinding/bin
+TruVideoVideoAndroidBinding/obj
+#TruVideoVideoAndroid/TruvideoCore/bin
+#TruVideoVideoAndroid/TruvideoCore/.gradle/
+#TruVideoVideoAndroid/TruvideoCore/build/
+#TruVideoVideoAndroid/TruvideoCore/.idea/
+#TruVideoVideoAndroid/TruvideoCore/.iml
+#TruVideoVideoAndroid/TruvideoCore/local.properties

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-71:/mipmap-hdpi-v4/ic_launcher_round.webp",
+        "source": "com.truvideo.video.TruvideoVideo-main-72:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-71:/mipmap-hdpi-v4/ic_launcher.webp",
+        "source": "com.truvideo.video.TruvideoVideo-main-72:/mipmap-hdpi/ic_launcher.webp"
+    }
+]
