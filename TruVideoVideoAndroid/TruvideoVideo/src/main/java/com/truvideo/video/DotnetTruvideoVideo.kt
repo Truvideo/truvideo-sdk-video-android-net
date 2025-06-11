@@ -2,7 +2,6 @@ package com.truvideo.video
 
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import androidx.startup.AppInitializer
 import com.google.gson.Gson
 import com.truvideo.sdk.video.TruvideoSdkVideo
@@ -86,6 +85,9 @@ class DotnetTruvideoVideo {
             context: Context,
             inputPath: String,
             outputPath: String,
+            position: Long,
+            width: Int,
+            height: Int,
             callback: VideoCallback
         ) {
             var input_Path = videoFile(inputPath)
@@ -95,9 +97,9 @@ class DotnetTruvideoVideo {
                     val resultPath: String = TruvideoSdkVideo.createThumbnail(
                         input = input_Path,
                         output = output_Path,
-                        position = 1000,
-                        width = 300, // or null
-                        height = 300 // or null
+                        position = position,
+                        width = width, // or null
+                        height = height // or null
                     )
                     callback.onSuccess(resultPath)
                     // Handle result
@@ -141,8 +143,8 @@ class DotnetTruvideoVideo {
             framesRateString: String,
             callback: VideoCallback
         ) {
-            var input_Path = listVideoFile(arrayList)
-            var output_Path = videoFileDescriptor(outputPath)
+            val inputpath = listVideoFile(arrayList)
+            val outputpath = videoFileDescriptor(outputPath)
             CoroutineScope(Dispatchers.Main).launch {
                 try {
                     val framesRate = if (framesRateString.equals("defaultFrameRate", true)) {
@@ -158,7 +160,7 @@ class DotnetTruvideoVideo {
                     } else {
                         TruvideoSdkVideoFrameRate.sixtyFps
                     }
-                    val builder = TruvideoSdkVideo.MergeBuilder(input_Path, output_Path)
+                    val builder = TruvideoSdkVideo.MergeBuilder(inputpath, outputpath)
                     // Set custom video resolution
                     builder.width = width
                     builder.height = height
