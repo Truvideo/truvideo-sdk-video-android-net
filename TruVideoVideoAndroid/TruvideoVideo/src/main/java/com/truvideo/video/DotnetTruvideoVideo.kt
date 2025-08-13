@@ -47,7 +47,7 @@ class DotnetTruvideoVideo {
             outputPath: String,
             callback: VideoCallback
         ) {
-            CoroutineScope(Dispatchers.Main).launch {
+            CoroutineScope(Dispatchers.IO).launch {
                 AppInitializer.getInstance(context.applicationContext)
                     .initializeComponent(TruvideoSdkVideoInitializer::class.java)
                 mainCallback = callback
@@ -63,7 +63,7 @@ class DotnetTruvideoVideo {
 
         @JvmStatic
         fun getVideoInfo(context: Context, inputPath: String, callback: VideoCallback) {
-            CoroutineScope(Dispatchers.Main).launch {
+            CoroutineScope(Dispatchers.IO).launch {
                 try {
                     var input_Path = videoFile(inputPath)
                     val info: TruvideoSdkVideoInformation = TruvideoSdkVideo.getInfo(input_Path)
@@ -92,7 +92,7 @@ class DotnetTruvideoVideo {
         ) {
             var input_Path = videoFile(inputPath)
             var output_Path = videoFileDescriptor(outputPath)
-            CoroutineScope(Dispatchers.Main).launch {
+            CoroutineScope(Dispatchers.IO).launch {
                 try {
                     val resultPath: String = TruvideoSdkVideo.createThumbnail(
                         input = input_Path,
@@ -121,7 +121,7 @@ class DotnetTruvideoVideo {
         ) {
             var input_Path = videoFile(inputPath)
             var output_Path = videoFileDescriptor(outputPath)
-            CoroutineScope(Dispatchers.Main).launch {
+            CoroutineScope(Dispatchers.IO).launch {
                 try {
                     val outputPath = TruvideoSdkVideo.clearNoise(input_Path, output_Path)
                     callback.onSuccess(outputPath)
@@ -145,7 +145,7 @@ class DotnetTruvideoVideo {
         ) {
             val inputpath = listVideoFile(arrayList)
             val outputpath = videoFileDescriptor(outputPath)
-            CoroutineScope(Dispatchers.Main).launch {
+            CoroutineScope(Dispatchers.IO).launch {
                 try {
                     val framesRate = if (framesRateString.equals("defaultFrameRate", true)) {
                         TruvideoSdkVideoFrameRate.defaultFrameRate
@@ -188,7 +188,7 @@ class DotnetTruvideoVideo {
 
         @JvmStatic
         fun getAllRequests(statusValue: String, callback: VideoCallback) {
-            CoroutineScope(Dispatchers.Main).launch {
+            CoroutineScope(Dispatchers.IO).launch {
                 val status = if (statusValue.equals("IDLE", true)) {
                     TruvideoSdkVideoRequestStatus.IDLE
                 } else if (statusValue.equals("ERROR", true)) {
@@ -211,7 +211,7 @@ class DotnetTruvideoVideo {
 
         @JvmStatic
         fun status(id: String, callback: VideoCallback) {
-            CoroutineScope(Dispatchers.Main).launch {
+            CoroutineScope(Dispatchers.IO).launch {
                 val request = TruvideoSdkVideo.getRequestById(id)
                 val status = request!!.status
                 callback.onSuccess("" + status)
@@ -220,7 +220,7 @@ class DotnetTruvideoVideo {
 
         @JvmStatic
         fun process(id: String, callback: VideoCallback) {
-            CoroutineScope(Dispatchers.Main).launch {
+            CoroutineScope(Dispatchers.IO).launch {
                 val request = TruvideoSdkVideo.getRequestById(id)
                 val process = request!!.process()
                 callback.onSuccess(process)
@@ -229,7 +229,7 @@ class DotnetTruvideoVideo {
 
         @JvmStatic
         fun progress(id: String, callback: VideoCallback) {
-            CoroutineScope(Dispatchers.Main).launch {
+            CoroutineScope(Dispatchers.IO).launch {
                 val request = TruvideoSdkVideo.getRequestById(id)
                 val progress = request!!.progress
                 callback.onSuccess("" + progress)
@@ -238,7 +238,7 @@ class DotnetTruvideoVideo {
 
         @JvmStatic
         fun cancel(id: String, callback: VideoCallback) {
-            CoroutineScope(Dispatchers.Main).launch {
+            CoroutineScope(Dispatchers.IO).launch {
                 val request = TruvideoSdkVideo.getRequestById(id)
                 request!!.cancel()
                 callback.onSuccess("Request Cancel")
@@ -247,7 +247,7 @@ class DotnetTruvideoVideo {
 
         @JvmStatic
         fun delete(id: String, callback: VideoCallback) {
-            CoroutineScope(Dispatchers.Main).launch {
+            CoroutineScope(Dispatchers.IO).launch {
                 val request = TruvideoSdkVideo.getRequestById(id)
                 request!!.delete()
                 callback.onSuccess("Request delete")
@@ -256,7 +256,7 @@ class DotnetTruvideoVideo {
 
         @JvmStatic
         fun type(id: String, callback: VideoCallback) {
-            CoroutineScope(Dispatchers.Main).launch {
+            CoroutineScope(Dispatchers.IO).launch {
                 val request = TruvideoSdkVideo.getRequestById(id)
                 val type = request!!.type
                 callback.onSuccess("" + type)
@@ -265,7 +265,7 @@ class DotnetTruvideoVideo {
 
         @JvmStatic
         fun data(id: String, callback: VideoCallback) {
-            CoroutineScope(Dispatchers.Main).launch {
+            CoroutineScope(Dispatchers.IO).launch {
                 val request = TruvideoSdkVideo.getRequestById(id)
                 val type = request!!.type
                 val data = if (type == TruvideoSdkVideoRequestType.MERGE) {
@@ -291,7 +291,7 @@ class DotnetTruvideoVideo {
         ) {
             var input_Path = videoFile(inputPath)
             var output_Path = videoFileDescriptor(outputPath)
-            CoroutineScope(Dispatchers.Main).launch {
+            CoroutineScope(Dispatchers.IO).launch {
                 try {
                     val framesRate = if (framesRateString.equals("defaultFrameRate", true)) {
                         TruvideoSdkVideoFrameRate.defaultFrameRate
@@ -333,7 +333,7 @@ class DotnetTruvideoVideo {
         ) {
             var input_Path = listVideoFile(arrayList)
             var output_Path = videoFileDescriptor(outputPath)
-            CoroutineScope(Dispatchers.Main).launch {
+            CoroutineScope(Dispatchers.IO).launch {
                 try {
                     val builder = TruvideoSdkVideo.ConcatBuilder(input_Path, output_Path)
                     val request: TruvideoSdkVideoRequest = builder.build()
@@ -353,7 +353,7 @@ class DotnetTruvideoVideo {
         fun compareVideos(context: Context, arrayList: List<String>, callback: VideoCallback) {
             //Compare videos and return true or false if they are ready to concat
             var input_Path = listVideoFile(arrayList)
-            CoroutineScope(Dispatchers.Main).launch {
+            CoroutineScope(Dispatchers.IO).launch {
                 try {
                     val result = TruvideoSdkVideo.compare(input_Path)
                     // Handle result
