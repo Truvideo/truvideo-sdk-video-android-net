@@ -66,10 +66,10 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.runtime)
     implementation(libs.truvideo.sdk.android.video)
-    /*configurations["copyDependencies"].dependencies.add(
-        project.dependencies.create("com.github.Truvideo:truvideo-sdk-android-video:76.2.5")
-    )*/
-    implementation("com.google.code.gson:gson:2.10.1")
+    configurations["copyDependencies"].dependencies.add(
+        project.dependencies.create("com.github.Truvideo:truvideo-sdk-android-video:78.1.7")
+    )
+    implementation(libs.gson)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
@@ -81,6 +81,11 @@ configurations.all {
     resolutionStrategy.eachDependency {
         if (requested.group == "org.jetbrains.skiko") {
             useTarget("androidx.compose.ui:ui:1.6.1") // Replace with a suitable alternative
+        }
+    }
+    resolutionStrategy.eachDependency {
+        if (requested.group == "androidx.activity" && requested.name == "activity-compose") {
+            useVersion("1.10.0")
         }
     }
 }

@@ -1,7 +1,9 @@
 package com.truvideo.video
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import androidx.startup.AppInitializer
 import com.google.gson.Gson
 import com.truvideo.sdk.video.TruvideoSdkVideo
@@ -17,28 +19,98 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import org.json.JSONArray
+import org.json.JSONObject
 import java.io.File
+import java.time.format.DateTimeFormatter
 
 class DotnetTruvideoVideo {
     companion object {
         var mainCallback: VideoCallback? = null
 
+        @SuppressLint("SuspiciousIndentation")
         @JvmStatic
         fun getResultPath(context: Context, name: String, callback: VideoCallback) {
-            // get result path with dynamic name
-            //var outputPath = File("${context.filesDir}/${name}").path
-            var outputPath = File("${name}").path
-            callback.onSuccess(outputPath)
+            CoroutineScope(Dispatchers.IO).launch {
+                try {
+                    val outputPath = File(name).path
+                        callback.onSuccess(outputPath)
+
+                } catch (exception: Exception) {
+                    exception.printStackTrace()
+                    callback.onFailure(exception.message ?: "Unknown error")
+
+                }
+            }
         }
 
         @JvmStatic
+        fun version(callback: VideoCallback) {
+            val version = TruvideoSdkVideo.version
+            callback.onSuccess("" + version)
+        }
+
+       /* @JvmStatic
         fun initAppVideoInitializer(context: Context, callback: VideoCallback) {
-            GlobalScope.launch(Dispatchers.Main) {
+            CoroutineScope(Dispatchers.IO).launch {
+                try {
+                    AppInitializer.getInstance(context.applicationContext)
+                        .initializeComponent(TruvideoSdkVideoInitializer::class.java)
+                        callback.onSuccess("Video Initializer")
+
+                } catch (exception: Exception) {
+                    exception.printStackTrace()
+                    callback.onFailure(exception.message ?: "Unknown error")
+                }
+            }
+        }*/
+
+        @JvmStatic
+        fun initAppVideoInitializer(context: Context, callback: VideoCallback) {
+            try {
+            CoroutineScope(Dispatchers.IO).launch {
                 AppInitializer.getInstance(context.applicationContext)
                     .initializeComponent(TruvideoSdkVideoInitializer::class.java)
                 callback.onSuccess("Video Initializer")
             }
+            } catch (exception: Exception) {
+                exception.printStackTrace()
+                callback.onFailure(exception.message ?: "Unknown error")
+            }
         }
+
+
+        @JvmStatic
+        fun generateThumbnail(
+            context: Context,
+            inputPath: String,
+            outputPath: String,
+            position: Long,
+            width: Int,
+            height: Int,
+            callback: VideoCallback
+        ) {
+            GlobalScope.launch(Dispatchers.IO) {
+                try {
+                    val input = videoFile(inputPath)
+                    val output = videoFileDescriptor(outputPath)
+                    val resultPath = TruvideoSdkVideo.createThumbnail(
+                        input = input,
+                        output = output,
+                        position = position,
+                        width = width,
+                        height = height
+                    )
+                    callback.onSuccess(resultPath)
+
+                } catch (exception: Exception) {
+                    exception.printStackTrace()
+                    callback.onFailure(exception.message ?: "Unknown error")
+
+                }
+            }
+        }
+
 
         @JvmStatic
         fun editVideo(
@@ -47,6 +119,10 @@ class DotnetTruvideoVideo {
             outputPath: String,
             callback: VideoCallback
         ) {
+            if(inputPath.endsWith(".png") || inputPath.endsWith(".jpg") || inputPath.endsWith(".jpeg")){
+                callback.onFailure("video path must be video not image")
+                return
+            }
             CoroutineScope(Dispatchers.IO).launch {
                 AppInitializer.getInstance(context.applicationContext)
                     .initializeComponent(TruvideoSdkVideoInitializer::class.java)
@@ -63,10 +139,19 @@ class DotnetTruvideoVideo {
 
         @JvmStatic
         fun getVideoInfo(context: Context, inputPath: String, callback: VideoCallback) {
-            CoroutineScope(Dispatchers.IO).launch {
+            if(inputPath== null){
+                callback.onFailure("input path is not valid")
+                return
+            }
+            if(inputPath.endsWith(".png") || inputPath.endsWith(".jpg") || inputPath.endsWith(".jpeg")){
+                callback.onFailure("video path must be video not image")
+            }
+
+            try{
+                CoroutineScope(Dispatchers.IO).launch {
                 try {
-                    var input_Path = videoFile(inputPath)
-                    val info: TruvideoSdkVideoInformation = TruvideoSdkVideo.getInfo(input_Path)
+                    val inputPath1 = videoFile(inputPath)
+                    val info: TruvideoSdkVideoInformation = TruvideoSdkVideo.getInfo(inputPath1)
                     // Handle video information
                     val duration: Long = info.durationMillis
                     val width: Long = info.size
@@ -78,9 +163,12 @@ class DotnetTruvideoVideo {
                     // Handle error
                 }
             }
+            } catch (e: Exception) {
+                callback.onFailure("Get video info failed: ${e.message}")
+            }
         }
 
-        @JvmStatic
+       /* @JvmStatic
         fun generateThumbnail(
             context: Context,
             inputPath: String,
@@ -110,7 +198,7 @@ class DotnetTruvideoVideo {
                 }
             }
 
-        }
+        }*/
 
         @JvmStatic
         fun clearNoise(
@@ -119,17 +207,168 @@ class DotnetTruvideoVideo {
             outputPath: String,
             callback: VideoCallback
         ) {
-            var input_Path = videoFile(inputPath)
-            var output_Path = videoFileDescriptor(outputPath)
-            CoroutineScope(Dispatchers.IO).launch {
-                try {
-                    val outputPath = TruvideoSdkVideo.clearNoise(input_Path, output_Path)
-                    callback.onSuccess(outputPath)
-                    // The cleaned video is stored in outputPath
-                } catch (exception: Exception) {
-                    // Handle error
-                    exception.printStackTrace()
+            if (inputPath.isEmpty() || outputPath.isEmpty()) {
+                callback.onFailure("input path or result path not valid")
+                return
+            }
+            if(outputPath.endsWith(".png") || outputPath.endsWith(".jpg") || outputPath.endsWith(".jpeg")){
+                callback.onFailure("video path must be video not image")
+                return
+            }
+            try {
+                val inputPath1 = videoFile(inputPath)
+                val outputPath1 = videoFileDescriptor(outputPath)
+                CoroutineScope(Dispatchers.IO).launch {
+                    try {
+                        val result = TruvideoSdkVideo.clearNoise(inputPath1, outputPath1)
+                        callback.onSuccess(result)
+                        // The cleaned video is stored in outputPath
+                    } catch (exception: Exception) {
+                        // Handle error
+                        exception.printStackTrace()
+                    }
                 }
+            }catch (exception:Exception){
+                // Handle error
+                callback.onFailure("Clear noise failed: ${exception.message}")
+                exception.printStackTrace()
+            }
+        }
+
+        @JvmStatic
+        fun streamAllRequests(context: Context, callback: VideoCallback) {
+            try{
+                val allRequest = TruvideoSdkVideo.streamAllRequests()
+                val gson = Gson()
+                val jsonResult = gson.toJson(allRequest)
+                callback.onSuccess(jsonResult)
+            } catch (e: Exception) {
+                callback.onFailure("Stream all request failed: ${e.message}")
+            }
+        }
+
+        @JvmStatic
+        fun getAllRequests(statusValue: String, callback: VideoCallback) {
+            try {
+                CoroutineScope(Dispatchers.IO).launch {
+                    val status = if (statusValue.equals("IDLE", true)) {
+                        TruvideoSdkVideoRequestStatus.IDLE
+                    } else if (statusValue.equals("ERROR", true)) {
+                        TruvideoSdkVideoRequestStatus.ERROR
+                    } else if (statusValue.equals("PROCESSING", true)) {
+                        TruvideoSdkVideoRequestStatus.PROCESSING
+                    } else if (statusValue.equals("COMPLETED", true)) {
+                        TruvideoSdkVideoRequestStatus.COMPLETE
+                    } else if (statusValue.equals("CANCELED", true)) {
+                        TruvideoSdkVideoRequestStatus.CANCELLED
+                    } else {
+                        TruvideoSdkVideoRequestStatus.CANCELLED
+                    }
+                    val allRequest = TruvideoSdkVideo.getAllRequests(status)
+                    //val gson = Gson()
+                    //val jsonResult = gson.toJson(allRequest)
+                    callback.onSuccess("" + allRequest)
+                }
+            } catch (e: Exception) {
+                callback.onFailure("Get all request failed: ${e.message}")
+            }
+        }
+
+        @JvmStatic
+        fun status(id: String, callback: VideoCallback) {
+            try{
+            CoroutineScope(Dispatchers.IO).launch {
+                val request = TruvideoSdkVideo.getRequestById(id)
+                val status = request!!.status
+                callback.onSuccess("" + status)
+            }
+            } catch (e: Exception) {
+                callback.onFailure("Status failed: ${e.message}")
+            }
+        }
+
+        @JvmStatic
+        fun process(id: String, callback: VideoCallback) {
+            try {
+                CoroutineScope(Dispatchers.IO).launch {
+                    val request = TruvideoSdkVideo.getRequestById(id)
+                    val process = request!!.process()
+                    callback.onSuccess(process)
+                }
+            } catch (e: Exception) {
+                callback.onFailure("Process failed: ${e.message}")
+            }
+        }
+
+        @JvmStatic
+        fun progress(id: String, callback: VideoCallback) {
+            try {
+                CoroutineScope(Dispatchers.IO).launch {
+                    val request = TruvideoSdkVideo.getRequestById(id)
+                    val progress = request!!.progress
+                    callback.onSuccess("" + progress)
+                }
+            } catch (e: Exception) {
+                callback.onFailure("Progress failed: ${e.message}")
+            }
+        }
+
+        @JvmStatic
+        fun cancel(id: String, callback: VideoCallback) {
+            try{
+            CoroutineScope(Dispatchers.IO).launch {
+                val request = TruvideoSdkVideo.getRequestById(id)
+                request!!.cancel()
+                callback.onSuccess("Request Cancel")
+            }
+            } catch (e: Exception) {
+                callback.onFailure("Cancel failed: ${e.message}")
+            }
+        }
+
+        @JvmStatic
+        fun delete(id: String, callback: VideoCallback) {
+            try{
+            CoroutineScope(Dispatchers.IO).launch {
+                val request = TruvideoSdkVideo.getRequestById(id)
+                request!!.delete()
+                callback.onSuccess("Request delete")
+            }
+            } catch (e: Exception) {
+                callback.onFailure("Delete failed: ${e.message}")
+            }
+        }
+
+        @JvmStatic
+        fun type(id: String, callback: VideoCallback) {
+            try {
+                CoroutineScope(Dispatchers.IO).launch {
+                    val request = TruvideoSdkVideo.getRequestById(id)
+                    val type = request!!.type
+                    callback.onSuccess("" + type)
+                }
+            } catch (e: Exception) {
+                callback.onFailure("Type failed: ${e.message}")
+            }
+        }
+
+        @JvmStatic
+        fun data(id: String, callback: VideoCallback) {
+            try {
+                CoroutineScope(Dispatchers.IO).launch {
+                    val request = TruvideoSdkVideo.getRequestById(id)
+                    val type = request!!.type
+                    val data = if (type == TruvideoSdkVideoRequestType.MERGE) {
+                        request.mergeData
+                    } else if (type == TruvideoSdkVideoRequestType.ENCODE) {
+                        request.encodeData
+                    } else {
+                        request.concatData
+                    }
+                    callback.onSuccess("" + data)
+                }
+            } catch (e: Exception) {
+                callback.onFailure("Data failed: ${e.message}")
             }
         }
 
@@ -143,11 +382,11 @@ class DotnetTruvideoVideo {
             framesRateString: String,
             callback: VideoCallback
         ) {
-            val inputpath = listVideoFile(arrayList)
-            val outputpath = videoFileDescriptor(outputPath)
+            val inputPath = listVideoFile(arrayList)
+            val outputPath1 = videoFileDescriptor(outputPath)
             CoroutineScope(Dispatchers.IO).launch {
                 try {
-                    val framesRate = if (framesRateString.equals("defaultFrameRate", true)) {
+                    val framesRates = if (framesRateString.equals("defaultFrameRate", true)) {
                         TruvideoSdkVideoFrameRate.defaultFrameRate
                     } else if (framesRateString.equals("twentyFourFps", true)) {
                         TruvideoSdkVideoFrameRate.twentyFourFps
@@ -160,122 +399,23 @@ class DotnetTruvideoVideo {
                     } else {
                         TruvideoSdkVideoFrameRate.sixtyFps
                     }
-                    val builder = TruvideoSdkVideo.MergeBuilder(inputpath, outputpath)
+                    val builder = TruvideoSdkVideo.MergeBuilder(inputPath, outputPath1)
                     // Set custom video resolution
                     builder.width = width
                     builder.height = height
-                    builder.framesRate = framesRate
+                    builder.framesRate = framesRates
                     val request: TruvideoSdkVideoRequest = builder.build()
-                   // val id = request.id
-                    val resultPath: String = request.process()
-                    callback.onSuccess(""+resultPath)
+
+                    callback.onSuccess(returnRequest(request))
+
+                    //val resultPath: String = request.process()
+                    //callback.onSuccess(""+resultPath)
                     // Handle result
                     // the merged video its on 'resultPath'
                 } catch (exception: Exception) {
                     //Handle error
                     exception.printStackTrace()
                 }
-            }
-        }
-
-        @JvmStatic
-        fun streamAllRequests(context: Context, callback: VideoCallback) {
-            val allRequest = TruvideoSdkVideo.streamAllRequests()
-            val gson = Gson()
-            val jsonResult = gson.toJson(allRequest)
-            callback.onSuccess(jsonResult)
-        }
-
-        @JvmStatic
-        fun getAllRequests(statusValue: String, callback: VideoCallback) {
-            CoroutineScope(Dispatchers.IO).launch {
-                val status = if (statusValue.equals("IDLE", true)) {
-                    TruvideoSdkVideoRequestStatus.IDLE
-                } else if (statusValue.equals("ERROR", true)) {
-                    TruvideoSdkVideoRequestStatus.ERROR
-                } else if (statusValue.equals("PROCESSING", true)) {
-                    TruvideoSdkVideoRequestStatus.PROCESSING
-                } else if (statusValue.equals("COMPLETED", true)) {
-                    TruvideoSdkVideoRequestStatus.COMPLETED
-                } else if (statusValue.equals("CANCELED", true)) {
-                    TruvideoSdkVideoRequestStatus.CANCELED
-                } else {
-                    TruvideoSdkVideoRequestStatus.CANCELED
-                }
-                val allRequest = TruvideoSdkVideo.getAllRequests(status)
-                //val gson = Gson()
-                //val jsonResult = gson.toJson(allRequest)
-                callback.onSuccess(""+allRequest)
-            }
-        }
-
-        @JvmStatic
-        fun status(id: String, callback: VideoCallback) {
-            CoroutineScope(Dispatchers.IO).launch {
-                val request = TruvideoSdkVideo.getRequestById(id)
-                val status = request!!.status
-                callback.onSuccess("" + status)
-            }
-        }
-
-        @JvmStatic
-        fun process(id: String, callback: VideoCallback) {
-            CoroutineScope(Dispatchers.IO).launch {
-                val request = TruvideoSdkVideo.getRequestById(id)
-                val process = request!!.process()
-                callback.onSuccess(process)
-            }
-        }
-
-        @JvmStatic
-        fun progress(id: String, callback: VideoCallback) {
-            CoroutineScope(Dispatchers.IO).launch {
-                val request = TruvideoSdkVideo.getRequestById(id)
-                val progress = request!!.progress
-                callback.onSuccess("" + progress)
-            }
-        }
-
-        @JvmStatic
-        fun cancel(id: String, callback: VideoCallback) {
-            CoroutineScope(Dispatchers.IO).launch {
-                val request = TruvideoSdkVideo.getRequestById(id)
-                request!!.cancel()
-                callback.onSuccess("Request Cancel")
-            }
-        }
-
-        @JvmStatic
-        fun delete(id: String, callback: VideoCallback) {
-            CoroutineScope(Dispatchers.IO).launch {
-                val request = TruvideoSdkVideo.getRequestById(id)
-                request!!.delete()
-                callback.onSuccess("Request delete")
-            }
-        }
-
-        @JvmStatic
-        fun type(id: String, callback: VideoCallback) {
-            CoroutineScope(Dispatchers.IO).launch {
-                val request = TruvideoSdkVideo.getRequestById(id)
-                val type = request!!.type
-                callback.onSuccess("" + type)
-            }
-        }
-
-        @JvmStatic
-        fun data(id: String, callback: VideoCallback) {
-            CoroutineScope(Dispatchers.IO).launch {
-                val request = TruvideoSdkVideo.getRequestById(id)
-                val type = request!!.type
-                val data = if (type == TruvideoSdkVideoRequestType.MERGE) {
-                    request.mergeData
-                } else if (type == TruvideoSdkVideoRequestType.ENCODE) {
-                    request.encodeData
-                } else {
-                    request.concatData
-                }
-                callback.onSuccess("" + data)
             }
         }
 
@@ -289,8 +429,8 @@ class DotnetTruvideoVideo {
             framesRateString: String,
             callback: VideoCallback
         ) {
-            var input_Path = videoFile(inputPath)
-            var output_Path = videoFileDescriptor(outputPath)
+            val inputPath1 = videoFile(inputPath)
+            val outputPath1 = videoFileDescriptor(outputPath)
             CoroutineScope(Dispatchers.IO).launch {
                 try {
                     val framesRate = if (framesRateString.equals("defaultFrameRate", true)) {
@@ -306,15 +446,16 @@ class DotnetTruvideoVideo {
                     } else {
                         TruvideoSdkVideoFrameRate.sixtyFps
                     }
-                    val builder = TruvideoSdkVideo.EncodeBuilder(input_Path, output_Path)
+                    val builder = TruvideoSdkVideo.EncodeBuilder(inputPath1, outputPath1)
                     // Set custom video resolution
                     builder.width = width
                     builder.height = height
                     builder.framesRate = framesRate
                     val request: TruvideoSdkVideoRequest = builder.build()
-                   // val id = request.id
-                    val resultPath: String = request.process()
-                    callback.onSuccess(""+resultPath)
+                    callback.onSuccess(returnRequest(request))
+
+                   // val resultPath: String = request.process()
+                    //callback.onSuccess(""+resultPath)
                     // Handle result
                     // the merged video its on 'resultPath'
                 } catch (exception: Exception) {
@@ -331,17 +472,18 @@ class DotnetTruvideoVideo {
             outputPath: String,
             callback: VideoCallback
         ) {
-            var input_Path = listVideoFile(arrayList)
-            var output_Path = videoFileDescriptor(outputPath)
+            val inputPath = listVideoFile(arrayList)
+            val outputPath1 = videoFileDescriptor(outputPath)
             CoroutineScope(Dispatchers.IO).launch {
                 try {
-                    val builder = TruvideoSdkVideo.ConcatBuilder(input_Path, output_Path)
+                    val builder = TruvideoSdkVideo.ConcatBuilder(inputPath, outputPath1)
                     val request: TruvideoSdkVideoRequest = builder.build()
-                    val id = request.id
-                    val outputPath = request.process()
-                    callback.onSuccess(outputPath)
+                    callback.onSuccess(returnRequest(request))
+
+                   // val resultPath = request.process()
+                    //callback.onSuccess(resultPath)
                     // Handle result
-                    // the concated video its on 'outputPath'
+                    // the concated video its on 'resultPath'
                 } catch (exception: Exception) {
                     // Handle error
                     exception.printStackTrace()
@@ -351,17 +493,26 @@ class DotnetTruvideoVideo {
 
         @JvmStatic
         fun compareVideos(context: Context, arrayList: List<String>, callback: VideoCallback) {
+            if(arrayList== null ){
+                callback.onFailure("input path or result path not valid")
+                return
+            }
+            try {
+                arrayList.forEach {
+                    if(it.endsWith(".png") || it.endsWith(".jpg") || it.endsWith(".jpeg")){
+                        callback.onFailure("input path must be video not image")
+                        return
+                    }
+                }
             //Compare videos and return true or false if they are ready to concat
-            var input_Path = listVideoFile(arrayList)
+            val inputPath = listVideoFile(arrayList)
             CoroutineScope(Dispatchers.IO).launch {
                 try {
-                    val result = TruvideoSdkVideo.compare(input_Path)
+                    val result = TruvideoSdkVideo.compare(inputPath)
                     // Handle result
                     if (result) {
-                        // videos are ready to concat
-                        callback.onSuccess("" + result)
+                        callback.onSuccess("" +result)
                     } else {
-                        // videos are needed to merge
                         callback.onSuccess("" + result)
                     }
                 } catch (exception: Exception) {
@@ -369,9 +520,52 @@ class DotnetTruvideoVideo {
                     exception.printStackTrace()
                 }
             }
+            } catch (e: Exception) {
+                callback.onFailure("Compare video failed: ${e.message}")
+            }
         }
 
-        fun videoFile(inputPath: String): TruvideoSdkVideoFile {
+        private fun returnRequest(request : TruvideoSdkVideoRequest) : String{
+            return JSONObject().apply{
+                put("id",request.id)
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    put("createdAt", DateTimeFormatter.ISO_INSTANT.format(request.createdAt.toInstant()))
+                    put("updatedAt", DateTimeFormatter.ISO_INSTANT.format(request.updatedAt.toInstant()))
+                }else{
+                    put("createdAt", request.createdAt)
+                    put("updatedAt", request.updatedAt)
+                }
+                put("status", when(request.status){
+                    TruvideoSdkVideoRequestStatus.IDLE -> "idle"
+                    TruvideoSdkVideoRequestStatus.PROCESSING -> "processing"
+                    TruvideoSdkVideoRequestStatus.ERROR -> "error"
+                    TruvideoSdkVideoRequestStatus.COMPLETE -> "complete"
+                    TruvideoSdkVideoRequestStatus.CANCELLED -> "cancelled"
+                })
+                put("type", request.type.name.lowercase())
+
+            }.toString()
+        }
+
+        fun returnRequests(requests: List<TruvideoSdkVideoRequest>): String {
+            val jsonArray = JSONArray()
+
+            for (request in requests) {
+                val jsonString = returnRequest(request)
+                try {
+                    val jsonObject = JSONObject(jsonString)
+                    jsonArray.put(jsonObject)
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+
+            return jsonArray.toString()
+        }
+
+
+
+        private fun videoFile(inputPath: String): TruvideoSdkVideoFile {
             return TruvideoSdkVideoFile.custom(inputPath)
         }
 

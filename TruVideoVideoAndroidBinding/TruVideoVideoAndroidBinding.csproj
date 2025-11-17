@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <Version>0.0.4</Version>
+        <Version>1.0.0</Version>
         <TargetFramework>net9.0-android</TargetFramework>
         <SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
         <Nullable>enable</Nullable>
@@ -20,24 +20,27 @@
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="$(MauiVersion)" />
         <PackageReference Include="CommunityToolkit.Maui.NativeLibraryInterop.BuildTasks" Version="0.0.1-pre1" />
-    </ItemGroup>
 
-    <!-- Android libraries -->
+        <!-- ✅ Media3 latest NuGets -->
+        <PackageReference Include="Xamarin.AndroidX.Media3.ExoPlayer" Version="1.4.1.1" />
+        <PackageReference Include="Xamarin.AndroidX.Media3.UI" Version="1.4.1.1" />
+        <PackageReference Include="Xamarin.AndroidX.Media3.Common" Version="1.4.1.1" />
+        <PackageReference Include="Xamarin.AndroidX.Media3.Extractor" Version="1.4.1.1" />
+        <PackageReference Include="Xamarin.AndroidX.Media3.DataSource" Version="1.4.1.1" />
+        <PackageReference Include="Xamarin.AndroidX.Media3.Container" Version="1.4.1.1" />
+        <PackageReference Include="Xamarin.AndroidX.Media3.Decoder" Version="1.4.1.1" />
+        <PackageReference Include="Xamarin.AndroidX.Media3.Database" Version="1.4.1.1" />
+    </ItemGroup>
+    <!-- Android AAR/JAR references -->
     <ItemGroup Condition="$(TargetFramework.Contains('android'))">
-        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/truvideo-sdk-android-video-76.2.5.aar" Bind="false" Visible="false" />
-        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/truvideo-sdk-android-krisp-1.0.0.aar" Bind="false" Visible="false" />
-        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/media3-exoplayer-1.4.1.aar" Bind="false" Visible="false" />
-        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/media3-common-1.4.1.aar" Bind="false" Visible="false" />
-        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/media3-container-1.4.1.aar" Bind="false" Visible="false" />
-        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/media3-database-1.4.1.aar" Bind="false" Visible="false" />
-        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/media3-datasource-1.4.1.aar" Bind="false" Visible="false" />
-        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/media3-decoder-1.4.1.aar" Bind="false" Visible="false" />
-        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/media3-extractor-1.4.1.aar" Bind="false" Visible="false" />
-        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/media3-ui-1.4.1.aar" Bind="false" Visible="false" />
-        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/ffmpeg-kit-full-6.0-2.aar" Bind="false" Visible="false" />
-        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/smart-exception-common-0.2.1.jar" Bind="false" Visible="false" />
-        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/smart-exception-java-0.2.1.jar" Bind="false" Visible="false" />
-        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/compose-1.0.0-beta01.aar" Bind="false" Visible="false" />
-        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/ktx-1.0.0-beta01.aar" Bind="false" Visible="false" />
+
+        <!-- TruVideo Video SDK -->
+        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/truvideo-sdk-android-video-78.1.7.aar" Bind="false" Visible="false" />
+        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/truvideo-sdk-android-components-0.1.20.aar" Bind="false" Visible="false" />
+        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/truvideo-sdk-android-video-utils-1.0.5.aar" Bind="false" Visible="false" />
+        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/truvideo-sdk-android-video-utils-exceptions-1.0.2.jar" Bind="false" Visible="false" />
     </ItemGroup>
 </Project>
+
+
+
