@@ -291,9 +291,13 @@ class DotnetTruvideoVideo {
         fun process(id: String, callback: VideoCallback) {
             try {
                 CoroutineScope(Dispatchers.IO).launch {
-                    val request = TruvideoSdkVideo.getRequestById(id)
-                    val process = request!!.process()
-                    callback.onSuccess(process)
+                    try {
+                        val request = TruvideoSdkVideo.getRequestById(id)
+                        val process = request!!.process()
+                        callback.onSuccess(process)
+                    } catch (e: Exception) {
+                        callback.onFailure("Process failed: ${e.message}")
+                    }
                 }
             } catch (e: Exception) {
                 callback.onFailure("Process failed: ${e.message}")
@@ -317,9 +321,13 @@ class DotnetTruvideoVideo {
         fun cancel(id: String, callback: VideoCallback) {
             try{
             CoroutineScope(Dispatchers.IO).launch {
+                try{
                 val request = TruvideoSdkVideo.getRequestById(id)
                 request!!.cancel()
                 callback.onSuccess("Request Cancel")
+                } catch (e: Exception) {
+                    callback.onFailure("Cancel failed: ${e.message}")
+                }
             }
             } catch (e: Exception) {
                 callback.onFailure("Cancel failed: ${e.message}")
@@ -330,9 +338,13 @@ class DotnetTruvideoVideo {
         fun delete(id: String, callback: VideoCallback) {
             try{
             CoroutineScope(Dispatchers.IO).launch {
+                try{
                 val request = TruvideoSdkVideo.getRequestById(id)
                 request!!.delete()
                 callback.onSuccess("Request delete")
+                } catch (e: Exception) {
+                    callback.onFailure("Delete failed: ${e.message}")
+                }
             }
             } catch (e: Exception) {
                 callback.onFailure("Delete failed: ${e.message}")

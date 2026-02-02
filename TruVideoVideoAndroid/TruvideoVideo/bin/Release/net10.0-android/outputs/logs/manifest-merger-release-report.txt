@@ -1,0 +1,74 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:2:1-33:12
+	package
+		INJECTED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:3:5-51
+	xmlns:android
+		ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:5:22-76
+uses-permission#android.permission.INTERNET
+ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:6:5-67
+	android:name
+		ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:6:22-64
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:7:5-71
+	android:name
+		ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:7:22-68
+uses-permission#android.permission.CAMERA
+ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:8:5-65
+	android:name
+		ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:8:22-62
+uses-permission#android.permission.ACCESS_MEDIA_LOCATION
+ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:9:5-80
+	android:name
+		ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:9:22-77
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:10:5-80
+	android:name
+		ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:10:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:11:5-81
+	android:name
+		ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:11:22-78
+uses-feature#android.hardware.camera
+ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:13:5-15:35
+	android:required
+		ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:15:9-32
+	android:name
+		ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:14:9-47
+uses-feature#android.hardware.camera.any
+ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:17:5-19:35
+	android:required
+		ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:19:9-32
+	android:name
+		ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:18:9-51
+uses-feature#android.hardware.camera.autofocus
+ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:21:5-23:36
+	android:required
+		ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:23:9-33
+	android:name
+		ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:22:9-57
+application
+ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:25:5-31:19
+activity#com.truvideo.video.VideoActivity
+ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:26:9-29:60
+	android:exported
+		ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:28:13-36
+	android:theme
+		ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:29:13-57
+	android:name
+		ADDED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:27:13-42
+uses-sdk
+INJECTED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml
+INJECTED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml

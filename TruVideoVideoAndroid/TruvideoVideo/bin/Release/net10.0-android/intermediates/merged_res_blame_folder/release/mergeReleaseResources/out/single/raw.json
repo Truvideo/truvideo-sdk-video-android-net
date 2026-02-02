@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-70:/raw/test_video_audio.wav",
+        "source": "com.truvideo.video.TruvideoVideo-truvideo-sdk-android-video-78.1.7-27:/raw/test_video_audio.wav"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-70:/raw/test_video.mp4",
+        "source": "com.truvideo.video.TruvideoVideo-truvideo-sdk-android-video-78.1.7-27:/raw/test_video.mp4"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-70:/raw/test_audio_2.wav",
+        "source": "com.truvideo.video.TruvideoVideo-truvideo-sdk-android-video-78.1.7-27:/raw/test_audio_2.wav"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-70:/raw/krisp_test_1.wav",
+        "source": "com.truvideo.video.TruvideoVideo-truvideo-sdk-android-video-78.1.7-27:/raw/krisp_test_1.wav"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-70:/raw/sample_nc_test_32.wav",
+        "source": "com.truvideo.video.TruvideoVideo-truvideo-sdk-android-video-78.1.7-27:/raw/sample_nc_test_32.wav"
+    }
+]

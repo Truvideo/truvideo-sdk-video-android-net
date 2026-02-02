@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.truvideo.video.TruvideoVideo-mergeReleaseResources-68:/values-v30/values-v30.xml",
+            "map": [
+                {
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/f8a1b598de08d83f1cbeeb9b67385a46/transformed/material3-release/res/values-v30/values-v30.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "72",
+                        "endOffsets": "123"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.truvideo.video.TruvideoVideo-release-70:/values-v30/values-v30.xml",
+            "map": [
+                {
+                    "source": "/Users/apple/.gradle/caches/8.10.2/transforms/f8a1b598de08d83f1cbeeb9b67385a46/transformed/material3-release/res/values-v30/values-v30.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "72",
+                        "endOffsets": "123"
+                    }
+                }
+            ]
+        }
+    ]
+}
