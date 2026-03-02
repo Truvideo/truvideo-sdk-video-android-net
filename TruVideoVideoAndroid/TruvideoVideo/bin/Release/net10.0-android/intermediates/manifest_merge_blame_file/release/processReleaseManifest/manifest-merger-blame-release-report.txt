@@ -6,56 +6,56 @@
 6    <uses-sdk android:minSdkVersion="24" />
 7
 8    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-8-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:5:5-79
-8-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:5:22-76
+8-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:5:5-79
+8-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:5:22-76
 9    <uses-permission android:name="android.permission.INTERNET" />
-9-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:6:5-67
-9-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:6:22-64
+9-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:6:5-67
+9-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:6:22-64
 10    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-10-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:7:5-71
-10-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:7:22-68
+10-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:7:5-71
+10-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:7:22-68
 11    <uses-permission android:name="android.permission.CAMERA" />
-11-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:8:5-65
-11-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:8:22-62
+11-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:8:5-65
+11-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:8:22-62
 12    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
-12-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:9:5-80
-12-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:9:22-77
+12-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:9:5-80
+12-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:9:22-77
 13    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-13-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:10:5-80
-13-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:10:22-77
+13-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:10:5-80
+13-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:10:22-77
 14    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-14-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:11:5-81
-14-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:11:22-78
+14-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:11:5-81
+14-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:11:22-78
 15
 16    <uses-feature
-16-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:13:5-15:35
+16-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:13:5-15:35
 17        android:name="android.hardware.camera"
-17-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:14:9-47
+17-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:14:9-47
 18        android:required="true" />
-18-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:15:9-32
+18-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:15:9-32
 19    <uses-feature
-19-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:17:5-19:35
+19-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:17:5-19:35
 20        android:name="android.hardware.camera.any"
-20-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:18:9-51
+20-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:18:9-51
 21        android:required="true" />
-21-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:19:9-32
+21-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:19:9-32
 22    <uses-feature
-22-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:21:5-23:36
+22-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:21:5-23:36
 23        android:name="android.hardware.camera.autofocus"
-23-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:22:9-57
+23-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:22:9-57
 24        android:required="false" />
-24-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:23:9-33
+24-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:23:9-33
 25
 26    <application>
-26-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:25:5-31:19
+26-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:25:5-31:19
 27        <activity
-27-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:26:9-29:60
+27-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:26:9-29:60
 28            android:name="com.truvideo.video.VideoActivity"
-28-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:27:13-42
+28-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:27:13-42
 29            android:exported="true"
-29-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:28:13-36
+29-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:28:13-36
 30            android:theme="@style/Theme.AppCompat.Light" />
-30-->/Users/apple/Documents/TruVideo/maui-sdk-demo-app-source/Android/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:29:13-57
+30-->/Users/apple/Documents/TruVideo/TruVideoAndroidBinding/truvideo-sdk-video-android-net/TruVideoVideoAndroid/TruvideoVideo/src/main/AndroidManifest.xml:29:13-57
 31    </application>
 32
 33</manifest>

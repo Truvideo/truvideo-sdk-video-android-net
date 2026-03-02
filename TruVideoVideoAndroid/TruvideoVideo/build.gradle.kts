@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -66,9 +67,9 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.runtime)
     implementation(libs.truvideo.sdk.android.video)
-    configurations["copyDependencies"].dependencies.add(
-        project.dependencies.create("com.github.Truvideo:truvideo-sdk-android-video:78.1.7")
-    )
+//    configurations["copyDependencies"].dependencies.add(
+//        project.dependencies.create("com.github.Truvideo:truvideo-sdk-android-video:79.1.2")
+//    )
     implementation(libs.gson)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
