@@ -23,24 +23,45 @@ class VideoActivity : ComponentActivity() {
         val output_Path = videoFileDescriptor(outputPath!!);
 
         lifecycleScope.launch {
-            editVideoLauncher =
-                registerForActivityResult(TruvideoSdkVideoEditContract(), { resultPath ->
-                    // edited video its on 'resultPath'
-                    DotnetTruvideoVideo.mainCallback?.onSuccess(resultPath)
-                    finish()
-                })
-            editVideo(input_Path, output_Path)
+            try {
+                editVideoLauncher =
+                    registerForActivityResult(TruvideoSdkVideoEditContract(), { resultPath ->
+                        // edited video its on 'resultPath'
+                       // DotnetTruvideoVideo.mainCallback?.onSuccess(resultPath)
+
+                        if (!resultPath.isNullOrEmpty()) {
+                            // ✅ Success
+                            DotnetTruvideoVideo.mainCallback?.onSuccess(resultPath)
+                        } else {
+                            // ❌ Failure case
+                            DotnetTruvideoVideo.mainCallback?.onSuccess("Video edit failed")
+                        }
+                        finish()
+
+
+                    })
+                editVideo(input_Path, output_Path)
+            } catch (e: Exception) {
+                DotnetTruvideoVideo.mainCallback?.onSuccess(e.message ?: "Unknown error")
+            }
         }
     }
 
     fun editVideo(input: TruvideoSdkVideoFile, output: TruvideoSdkVideoFileDescriptor) {
-        editVideoLauncher.launch(
-            TruvideoSdkVideoEditParams(
-                input = input,
-                output = output
+        try {
+            editVideoLauncher.launch(
+                TruvideoSdkVideoEditParams(
+                    input = input,
+                    output = output,
+                    useMedia3 = true
+                )
             )
-        )
+        }catch (e: Exception) {
+            DotnetTruvideoVideo.mainCallback?.onSuccess(e.message ?: "Unknown error")
+        }
     }
+
+
 
     fun videoFile(inputPath: String): TruvideoSdkVideoFile {
         return TruvideoSdkVideoFile.custom(inputPath)

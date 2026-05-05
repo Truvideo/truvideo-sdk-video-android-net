@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.truvideo.video.TruvideoVideo-release-57:/values-land/values-land.xml",
+            "outputFile": "com.truvideo.video.TruvideoVideo-release-58:/values-land/values-land.xml",
             "map": [
                 {
                     "source": "/Users/apple/.gradle/caches/8.10.2/transforms/a34be1b6ed4f7000f388b41129a8cb5f/transformed/material-1.12.0/res/values-land/values-land.xml",
@@ -35,7 +35,7 @@
             ]
         },
         {
-            "outputFile": "com.truvideo.video.TruvideoVideo-mergeReleaseResources-55:/values-land/values-land.xml",
+            "outputFile": "com.truvideo.video.TruvideoVideo-mergeReleaseResources-56:/values-land/values-land.xml",
             "map": [
                 {
                     "source": "/Users/apple/.gradle/caches/8.10.2/transforms/a34be1b6ed4f7000f388b41129a8cb5f/transformed/material-1.12.0/res/values-land/values-land.xml",

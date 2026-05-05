@@ -67,9 +67,10 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.runtime)
     implementation(libs.truvideo.sdk.android.video)
-//    configurations["copyDependencies"].dependencies.add(
-//        project.dependencies.create("com.github.Truvideo:truvideo-sdk-android-video:79.1.2")
-//    )
+    /*configurations["copyDependencies"].dependencies.add(
+        project.dependencies.create("com.github.truvideo:truvideo-sdk-android-video:79.1.8")
+    )*/
+
     implementation(libs.gson)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)

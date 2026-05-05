@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <Version>1.0.0-beta.1</Version>
+        <Version>2.0.0</Version>
         <TargetFramework>net10.0-android</TargetFramework>
         <SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
         <Nullable>enable</Nullable>
@@ -23,21 +23,22 @@
         <PackageReference Include="CommunityToolkit.Maui.NativeLibraryInterop.BuildTasks" Version="0.0.1-pre1" />
 
         <!-- ✅ Media3 latest NuGets -->
-        <PackageReference Include="Xamarin.AndroidX.Media3.ExoPlayer" Version="1.4.1.1" />
-        <PackageReference Include="Xamarin.AndroidX.Media3.UI" Version="1.4.1.1" />
-        <PackageReference Include="Xamarin.AndroidX.Media3.Common" Version="1.4.1.1" />
-        <PackageReference Include="Xamarin.AndroidX.Media3.Extractor" Version="1.4.1.1" />
-        <PackageReference Include="Xamarin.AndroidX.Media3.DataSource" Version="1.4.1.1" />
-        <PackageReference Include="Xamarin.AndroidX.Media3.Container" Version="1.4.1.1" />
-        <PackageReference Include="Xamarin.AndroidX.Media3.Decoder" Version="1.4.1.1" />
-        <PackageReference Include="Xamarin.AndroidX.Media3.Database" Version="1.4.1.1" />
+        <PackageReference Include="Xamarin.AndroidX.Media3.Transformer" Version="1.9.0" />
+        <PackageReference Include="Xamarin.AndroidX.Media3.ExoPlayer" Version="1.9.0" />
+        <PackageReference Include="Xamarin.AndroidX.Media3.UI" Version="1.9.0" />
+        <PackageReference Include="Xamarin.AndroidX.Media3.Common" Version="1.9.0" />
+        <PackageReference Include="Xamarin.AndroidX.Media3.Extractor" Version="1.9.0" />
+        <PackageReference Include="Xamarin.AndroidX.Media3.DataSource" Version="1.9.0" />
+        <PackageReference Include="Xamarin.AndroidX.Media3.Container" Version="1.9.0" />
+        <PackageReference Include="Xamarin.AndroidX.Media3.Decoder" Version="1.9.0" />
+        <PackageReference Include="Xamarin.AndroidX.Media3.Database" Version="1.9.0" />
     </ItemGroup>
     <!-- Android AAR/JAR references -->
     <ItemGroup Condition="$(TargetFramework.Contains('android'))">
 
         <!-- TruVideo Video SDK -->
-        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/truvideo-sdk-android-video-79.1.2.aar" Bind="false" Visible="false" />
-        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/truvideo-sdk-android-components-0.1.20.aar" Bind="false" Visible="false" />
+        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/truvideo-sdk-android-video-79.1.8.aar" Bind="false" Visible="false" />
+        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/truvideo-sdk-android-components-0.1.22.aar" Bind="false" Visible="false" />
         <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/truvideo-sdk-android-video-utils-1.0.5.aar" Bind="false" Visible="false" />
         <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/truvideo-sdk-android-video-utils-exceptions-1.0.2.jar" Bind="false" Visible="false" />
     </ItemGroup>
