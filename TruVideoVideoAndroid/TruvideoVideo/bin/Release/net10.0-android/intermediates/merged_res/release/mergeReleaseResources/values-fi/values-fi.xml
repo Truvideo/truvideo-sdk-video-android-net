@@ -206,7 +206,6 @@
     <string name="material_timepicker_pm">ip</string>
     <string name="material_timepicker_select_time">Valitse aika</string>
     <string name="material_timepicker_text_input_mode_description">Vaihda ajan syöttämiseen tekstitilassa.</string>
-    <string msgid="8471891128988107974" name="mc2_snackbar_pane_title">"Ilmoitus"</string>
     <string name="mtrl_badge_numberless_content_description">Uusi ilmoitus</string>
     <string name="mtrl_checkbox_state_description_checked">Valittu</string>
     <string name="mtrl_checkbox_state_description_indeterminate">Osittain valittu</string>

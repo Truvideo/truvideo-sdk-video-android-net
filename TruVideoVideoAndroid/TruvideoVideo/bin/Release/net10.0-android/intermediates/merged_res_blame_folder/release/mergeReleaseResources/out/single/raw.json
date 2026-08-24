@@ -1,22 +1,94 @@
 [
     {
-        "merged": "com.truvideo.video.TruvideoVideo-release-58:/raw/test_video.mp4",
-        "source": "com.truvideo.video.TruvideoVideo-truvideo-sdk-android-video-79.1.8-54:/raw/test_video.mp4"
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/fragment_shader_transformation_es2.glsl",
+        "source": "com.truvideo.video.TruvideoVideo-media3-effect-1.10.1-16:/raw/fragment_shader_transformation_es2.glsl"
     },
     {
-        "merged": "com.truvideo.video.TruvideoVideo-release-58:/raw/sample_nc_test_32.wav",
-        "source": "com.truvideo.video.TruvideoVideo-truvideo-sdk-android-video-79.1.8-54:/raw/sample_nc_test_32.wav"
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/fragment_shader_transformation_sdr_external_es2.glsl",
+        "source": "com.truvideo.video.TruvideoVideo-media3-effect-1.10.1-16:/raw/fragment_shader_transformation_sdr_external_es2.glsl"
     },
     {
-        "merged": "com.truvideo.video.TruvideoVideo-release-58:/raw/test_audio_2.wav",
-        "source": "com.truvideo.video.TruvideoVideo-truvideo-sdk-android-video-79.1.8-54:/raw/test_audio_2.wav"
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/vertex_shader_thumbnail_strip_es2.glsl",
+        "source": "com.truvideo.video.TruvideoVideo-media3-effect-1.10.1-16:/raw/vertex_shader_thumbnail_strip_es2.glsl"
     },
     {
-        "merged": "com.truvideo.video.TruvideoVideo-release-58:/raw/krisp_test_1.wav",
-        "source": "com.truvideo.video.TruvideoVideo-truvideo-sdk-android-video-79.1.8-54:/raw/krisp_test_1.wav"
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/insert_ultra_hdr.glsl",
+        "source": "com.truvideo.video.TruvideoVideo-media3-effect-1.10.1-16:/raw/insert_ultra_hdr.glsl"
     },
     {
-        "merged": "com.truvideo.video.TruvideoVideo-release-58:/raw/test_video_audio.wav",
-        "source": "com.truvideo.video.TruvideoVideo-truvideo-sdk-android-video-79.1.8-54:/raw/test_video_audio.wav"
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/fragment_shader_alpha_scale_es2.glsl",
+        "source": "com.truvideo.video.TruvideoVideo-media3-effect-1.10.1-16:/raw/fragment_shader_alpha_scale_es2.glsl"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/test_audio_2.wav",
+        "source": "com.truvideo.video.TruvideoVideo-sdk-video-1.0.5-33:/raw/test_audio_2.wav"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/fragment_shader_lut_es2.glsl",
+        "source": "com.truvideo.video.TruvideoVideo-media3-effect-1.10.1-16:/raw/fragment_shader_lut_es2.glsl"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/test_video_audio.wav",
+        "source": "com.truvideo.video.TruvideoVideo-sdk-video-1.0.5-33:/raw/test_video_audio.wav"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/fragment_shader_transformation_hdr_internal_es3.glsl",
+        "source": "com.truvideo.video.TruvideoVideo-media3-effect-1.10.1-16:/raw/fragment_shader_transformation_hdr_internal_es3.glsl"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/insert_overlay_fragment_shader_methods.glsl",
+        "source": "com.truvideo.video.TruvideoVideo-media3-effect-1.10.1-16:/raw/insert_overlay_fragment_shader_methods.glsl"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/vertex_shader_transformation_es3.glsl",
+        "source": "com.truvideo.video.TruvideoVideo-media3-effect-1.10.1-16:/raw/vertex_shader_transformation_es3.glsl"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/sample_nc_test_32.wav",
+        "source": "com.truvideo.video.TruvideoVideo-sdk-video-1.0.5-33:/raw/sample_nc_test_32.wav"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/test_video.mp4",
+        "source": "com.truvideo.video.TruvideoVideo-sdk-video-1.0.5-33:/raw/test_video.mp4"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/fragment_shader_transformation_ultra_hdr_es3.glsl",
+        "source": "com.truvideo.video.TruvideoVideo-media3-effect-1.10.1-16:/raw/fragment_shader_transformation_ultra_hdr_es3.glsl"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/krisp_test_1.wav",
+        "source": "com.truvideo.video.TruvideoVideo-sdk-video-1.0.5-33:/raw/krisp_test_1.wav"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/fragment_shader_transformation_sdr_internal_es2.glsl",
+        "source": "com.truvideo.video.TruvideoVideo-media3-effect-1.10.1-16:/raw/fragment_shader_transformation_sdr_internal_es2.glsl"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/vertex_shader_transformation_es2.glsl",
+        "source": "com.truvideo.video.TruvideoVideo-media3-effect-1.10.1-16:/raw/vertex_shader_transformation_es2.glsl"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/fragment_shader_hsl_es2.glsl",
+        "source": "com.truvideo.video.TruvideoVideo-media3-effect-1.10.1-16:/raw/fragment_shader_hsl_es2.glsl"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/fragment_shader_copy_es2.glsl",
+        "source": "com.truvideo.video.TruvideoVideo-media3-effect-1.10.1-16:/raw/fragment_shader_copy_es2.glsl"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/fragment_shader_transformation_sdr_oetf_es2.glsl",
+        "source": "com.truvideo.video.TruvideoVideo-media3-effect-1.10.1-16:/raw/fragment_shader_transformation_sdr_oetf_es2.glsl"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/fragment_shader_oetf_es3.glsl",
+        "source": "com.truvideo.video.TruvideoVideo-media3-effect-1.10.1-16:/raw/fragment_shader_oetf_es3.glsl"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/fragment_shader_transformation_external_yuv_es3.glsl",
+        "source": "com.truvideo.video.TruvideoVideo-media3-effect-1.10.1-16:/raw/fragment_shader_transformation_external_yuv_es3.glsl"
+    },
+    {
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/raw/fragment_shader_separable_convolution_es2.glsl",
+        "source": "com.truvideo.video.TruvideoVideo-media3-effect-1.10.1-16:/raw/fragment_shader_separable_convolution_es2.glsl"
     }
 ]

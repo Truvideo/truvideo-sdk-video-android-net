@@ -1,34 +1,34 @@
 [
     {
-        "merged": "com.truvideo.video.TruvideoVideo-release-58:/interpolator/btn_radio_to_off_mtrl_animation_interpolator_0.xml",
-        "source": "com.truvideo.video.TruvideoVideo-appcompat-1.7.0-29:/interpolator/btn_radio_to_off_mtrl_animation_interpolator_0.xml"
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/interpolator/btn_checkbox_checked_mtrl_animation_interpolator_0.xml",
+        "source": "com.truvideo.video.TruvideoVideo-appcompat-1.7.1-42:/interpolator/btn_checkbox_checked_mtrl_animation_interpolator_0.xml"
     },
     {
-        "merged": "com.truvideo.video.TruvideoVideo-release-58:/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_1.xml",
-        "source": "com.truvideo.video.TruvideoVideo-appcompat-1.7.0-29:/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_1.xml"
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/interpolator/fast_out_slow_in.xml",
+        "source": "com.truvideo.video.TruvideoVideo-appcompat-1.7.1-42:/interpolator/fast_out_slow_in.xml"
     },
     {
-        "merged": "com.truvideo.video.TruvideoVideo-release-58:/interpolator/btn_radio_to_on_mtrl_animation_interpolator_0.xml",
-        "source": "com.truvideo.video.TruvideoVideo-appcompat-1.7.0-29:/interpolator/btn_radio_to_on_mtrl_animation_interpolator_0.xml"
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/interpolator/btn_radio_to_off_mtrl_animation_interpolator_0.xml",
+        "source": "com.truvideo.video.TruvideoVideo-appcompat-1.7.1-42:/interpolator/btn_radio_to_off_mtrl_animation_interpolator_0.xml"
     },
     {
-        "merged": "com.truvideo.video.TruvideoVideo-release-58:/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_0.xml",
-        "source": "com.truvideo.video.TruvideoVideo-appcompat-1.7.0-29:/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_0.xml"
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_1.xml",
+        "source": "com.truvideo.video.TruvideoVideo-appcompat-1.7.1-42:/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_1.xml"
     },
     {
-        "merged": "com.truvideo.video.TruvideoVideo-release-58:/interpolator/fast_out_slow_in.xml",
-        "source": "com.truvideo.video.TruvideoVideo-appcompat-1.7.0-29:/interpolator/fast_out_slow_in.xml"
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/interpolator/btn_radio_to_on_mtrl_animation_interpolator_0.xml",
+        "source": "com.truvideo.video.TruvideoVideo-appcompat-1.7.1-42:/interpolator/btn_radio_to_on_mtrl_animation_interpolator_0.xml"
     },
     {
-        "merged": "com.truvideo.video.TruvideoVideo-release-58:/interpolator/btn_checkbox_checked_mtrl_animation_interpolator_1.xml",
-        "source": "com.truvideo.video.TruvideoVideo-appcompat-1.7.0-29:/interpolator/btn_checkbox_checked_mtrl_animation_interpolator_1.xml"
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_0.xml",
+        "source": "com.truvideo.video.TruvideoVideo-appcompat-1.7.1-42:/interpolator/btn_checkbox_unchecked_mtrl_animation_interpolator_0.xml"
     },
     {
-        "merged": "com.truvideo.video.TruvideoVideo-release-58:/interpolator/btn_checkbox_checked_mtrl_animation_interpolator_0.xml",
-        "source": "com.truvideo.video.TruvideoVideo-appcompat-1.7.0-29:/interpolator/btn_checkbox_checked_mtrl_animation_interpolator_0.xml"
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/interpolator/mtrl_linear.xml",
+        "source": "com.truvideo.video.TruvideoVideo-material-1.12.0-0:/interpolator/mtrl_linear.xml"
     },
     {
-        "merged": "com.truvideo.video.TruvideoVideo-release-58:/interpolator/mtrl_linear.xml",
-        "source": "com.truvideo.video.TruvideoVideo-material-1.12.0-28:/interpolator/mtrl_linear.xml"
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/interpolator/btn_checkbox_checked_mtrl_animation_interpolator_1.xml",
+        "source": "com.truvideo.video.TruvideoVideo-appcompat-1.7.1-42:/interpolator/btn_checkbox_checked_mtrl_animation_interpolator_1.xml"
     }
 ]

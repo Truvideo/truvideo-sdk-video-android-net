@@ -4,10 +4,11 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.util.Log
 import androidx.startup.AppInitializer
 import com.google.gson.Gson
 import com.truvideo.sdk.video.TruvideoSdkVideo
-import com.truvideo.sdk.video.TruvideoSdkVideoInitializer
+import com.truvideo.sdk.video.initializer.TruvideoSdkVideoInitializer
 import com.truvideo.sdk.video.model.TruvideoSdkVideoFile
 import com.truvideo.sdk.video.model.TruvideoSdkVideoFileDescriptor
 import com.truvideo.sdk.video.model.TruvideoSdkVideoFrameRate
@@ -46,26 +47,11 @@ class DotnetTruvideoVideo {
             }
         }
 
-        @JvmStatic
+        /*@JvmStatic
         fun version(callback: VideoCallback) {
             val version = TruvideoSdkVideo.version
             callback.onSuccess("" + version)
-        }
-
-        /* @JvmStatic
-         fun initAppVideoInitializer(context: Context, callback: VideoCallback) {
-             CoroutineScope(Dispatchers.IO).launch {
-                 try {
-                     AppInitializer.getInstance(context.applicationContext)
-                         .initializeComponent(TruvideoSdkVideoInitializer::class.java)
-                         callback.onSuccess("Video Initializer")
-
-                 } catch (exception: Exception) {
-                     exception.printStackTrace()
-                     callback.onFailure(exception.message ?: "Unknown error")
-                 }
-             }
-         }*/
+        }*/
 
         @JvmStatic
         fun initAppVideoInitializer(context: Context, callback: VideoCallback) {
@@ -172,37 +158,6 @@ class DotnetTruvideoVideo {
             }
         }
 
-        /* @JvmStatic
-         fun generateThumbnail(
-             context: Context,
-             inputPath: String,
-             outputPath: String,
-             position: Long,
-             width: Int,
-             height: Int,
-             callback: VideoCallback
-         ) {
-             var input_Path = videoFile(inputPath)
-             var output_Path = videoFileDescriptor(outputPath)
-             CoroutineScope(Dispatchers.IO).launch {
-                 try {
-                     val resultPath: String = TruvideoSdkVideo.createThumbnail(
-                         input = input_Path,
-                         output = output_Path,
-                         position = position,
-                         width = width, // or null
-                         height = height // or null
-                     )
-                     callback.onSuccess(resultPath)
-                     // Handle result
-                     // the thumbnail image is stored in resultPath
-                 } catch (exception: Exception) {
-                     // Handle error
-                     exception.printStackTrace()
-                 }
-             }
-
-         }*/
 
         @JvmStatic
         fun clearNoise(
@@ -240,19 +195,8 @@ class DotnetTruvideoVideo {
             }
         }
 
-       /* @JvmStatic
-        fun streamAllRequests(context: Context, callback: VideoCallback) {
-            try{
-                val allRequest = TruvideoSdkVideo.streamAllRequests()
-                val gson = Gson()
-                val jsonResult = gson.toJson(allRequest)
-                callback.onSuccess(jsonResult)
-            } catch (e: Exception) {
-                callback.onFailure("Stream all request failed: ${e.message}")
-            }
-        }
-*/
-        @JvmStatic
+
+        /*@JvmStatic
         fun getAllRequests(statusValue: String, callback: VideoCallback) {
             try {
                 CoroutineScope(Dispatchers.IO).launch {
@@ -277,7 +221,89 @@ class DotnetTruvideoVideo {
             } catch (e: Exception) {
                 callback.onFailure("Get all request failed: ${e.message}")
             }
+        }*/
+
+
+        @JvmStatic
+        fun getAllRequests(statusValue: String, callback: VideoCallback) {
+
+            CoroutineScope(Dispatchers.IO).launch {
+
+                try {
+
+                    val requests = if (statusValue.isBlank()) {
+
+                        TruvideoSdkVideo.getAllRequests()
+
+                    } else {
+
+                        val status: TruvideoSdkVideoRequestStatus? = when (statusValue.uppercase()) {
+                            "IDLE" -> TruvideoSdkVideoRequestStatus.IDLE
+                            "ERROR" -> TruvideoSdkVideoRequestStatus.ERROR
+                            "PROCESSING" -> TruvideoSdkVideoRequestStatus.PROCESSING
+                            "COMPLETED" -> TruvideoSdkVideoRequestStatus.COMPLETE
+                            "CANCELED" -> TruvideoSdkVideoRequestStatus.CANCELLED
+                            else -> null
+                        }
+
+                        if (status != null) {
+                            TruvideoSdkVideo.getAllRequests(status)
+                        } else {
+                            TruvideoSdkVideo.getAllRequests()
+                        }
+                    }
+
+
+                    val result = requests.map { request ->
+
+                        VideoRequestDto(
+                            id = request.id,
+                            errorMessage = request.errorMessage,
+                            createdAtMillis = request.createdAtMillis,
+                            updatedAtMillis = request.updatedAtMillis,
+                            progress = request.progress,
+                            status = request.status?.name,
+                            type = request.type?.name,
+                            encodeData = request.encodeData?.let {
+                                VideoEncodeDataDto(
+                                    inputPath = it.inputPath,
+                                    outputPath = it.outputPath,
+                                    resultPath = it.resultPath,
+                                )
+                            },
+
+                            concatData = request.concatData?.let {
+                                VideoConcatDataDto(
+                                    inputPaths = it.inputPaths,
+                                    outputPath = it.outputPath,
+                                    resultPath = it.resultPath
+                                )
+                            },
+
+                            mergeData = request.mergeData?.let {
+                                VideoMergeDataDto(
+                                    inputPaths = it.inputPaths,
+                                    outputPath = it.outputPath,
+                                    resultPath = it.resultPath
+                                )
+                            }
+                        )
+                    }
+
+                    val jsonResult = Gson().toJson(result)
+                   // Log.e("Rahul",""+jsonResult)
+
+                    callback.onSuccess(""+jsonResult)
+
+                } catch (e: Exception) {
+
+                    callback.onFailure(
+                        "Get all request failed: ${e.message}"
+                    )
+                }
+            }
         }
+
 
         @JvmStatic
         fun status(id: String, callback: VideoCallback) {

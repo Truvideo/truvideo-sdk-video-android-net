@@ -206,7 +206,6 @@
     <string name="material_timepicker_pm">PM</string>
     <string name="material_timepicker_select_time">நேரத்தைத் தேர்ந்தெடுக்கவும்</string>
     <string name="material_timepicker_text_input_mode_description">உரை உள்ளீட்டிற்காக, கடிகாரப் பயன்முறைக்கு மாற்றும்.</string>
-    <string msgid="8471891128988107974" name="mc2_snackbar_pane_title">"விழிப்பூட்டல்"</string>
     <string name="mtrl_badge_numberless_content_description">புதிய அறிவிப்பு</string>
     <string name="mtrl_checkbox_state_description_checked">தேர்வுசெய்யப்பட்டுள்ளது</string>
     <string name="mtrl_checkbox_state_description_indeterminate">பாதி தேர்வுசெய்யப்பட்டுள்ளது</string>

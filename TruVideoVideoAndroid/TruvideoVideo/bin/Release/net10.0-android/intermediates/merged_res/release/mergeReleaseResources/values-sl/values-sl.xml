@@ -212,7 +212,6 @@
     <string name="material_timepicker_pm">pop.</string>
     <string name="material_timepicker_select_time">Izberite uro</string>
     <string name="material_timepicker_text_input_mode_description">Preklopite na način za vnašanje besedila, da vnesete čas.</string>
-    <string msgid="8471891128988107974" name="mc2_snackbar_pane_title">"Opozorilo"</string>
     <string name="mtrl_badge_numberless_content_description">Novo obvestilo</string>
     <string name="mtrl_checkbox_state_description_checked">Potrjeno</string>
     <string name="mtrl_checkbox_state_description_indeterminate">Delno potrjeno</string>

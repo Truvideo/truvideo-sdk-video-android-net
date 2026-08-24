@@ -120,7 +120,7 @@
     <string name="exo_track_surround">Son surround</string>
     <string name="exo_track_surround_5_point_1">Son surround 5.1</string>
     <string name="exo_track_surround_7_point_1">Son surround 7.1</string>
-    <string name="exo_track_unknown">Inconnu</string>
+    <string name="exo_track_unknown">Non précisé</string>
     <string name="exo_track_unknown_name">Inconnu (%1$s)</string>
     <string name="exposed_dropdown_menu_content_description">Afficher le menu déroulant</string>
     <string name="icon_content_description">Icône de la boîte de dialogue</string>
@@ -206,7 +206,6 @@
     <string name="material_timepicker_pm">PM</string>
     <string name="material_timepicker_select_time">Sélectionner l\'heure</string>
     <string name="material_timepicker_text_input_mode_description">Passer en mode saisie de texte pour la saisie de l\'heure.</string>
-    <string msgid="8471891128988107974" name="mc2_snackbar_pane_title">"Alerte"</string>
     <string name="mtrl_badge_numberless_content_description">Nouvelle notification</string>
     <string name="mtrl_checkbox_state_description_checked">Cochée</string>
     <string name="mtrl_checkbox_state_description_indeterminate">Partiellement cochée</string>

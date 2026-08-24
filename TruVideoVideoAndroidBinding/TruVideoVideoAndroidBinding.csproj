@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <Version>2.0.0</Version>
+        <Version>2.0.2</Version>
         <TargetFramework>net10.0-android</TargetFramework>
         <SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
         <Nullable>enable</Nullable>
@@ -37,8 +37,7 @@
     <ItemGroup Condition="$(TargetFramework.Contains('android'))">
 
         <!-- TruVideo Video SDK -->
-        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/truvideo-sdk-android-video-79.1.8.aar" Bind="false" Visible="false" />
-        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/truvideo-sdk-android-components-0.1.22.aar" Bind="false" Visible="false" />
+        <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/sdk-video-1.0.5.aar" Bind="false" Visible="false" />
         <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/truvideo-sdk-android-video-utils-1.0.5.aar" Bind="false" Visible="false" />
         <AndroidLibrary Include="../TruVideoVideoAndroid/TruvideoVideo/libs/truvideo-sdk-android-video-utils-exceptions-1.0.2.jar" Bind="false" Visible="false" />
     </ItemGroup>

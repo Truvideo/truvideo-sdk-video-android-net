@@ -206,7 +206,6 @@
     <string name="material_timepicker_pm">PM</string>
     <string name="material_timepicker_select_time">Selecionar hora</string>
     <string name="material_timepicker_text_input_mode_description">Mude para o modo de introdução de texto para a introdução da hora.</string>
-    <string msgid="8471891128988107974" name="mc2_snackbar_pane_title">"Alerta"</string>
     <string name="mtrl_badge_numberless_content_description">Nova notificação</string>
     <string name="mtrl_checkbox_state_description_checked">Selecionada</string>
     <string name="mtrl_checkbox_state_description_indeterminate">Parcialmente selecionada</string>

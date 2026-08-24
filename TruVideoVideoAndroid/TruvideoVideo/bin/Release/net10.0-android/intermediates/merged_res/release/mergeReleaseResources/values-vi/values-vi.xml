@@ -206,7 +206,6 @@
     <string name="material_timepicker_pm">CH</string>
     <string name="material_timepicker_select_time">Chọn thời gian</string>
     <string name="material_timepicker_text_input_mode_description">Chuyển sang chế độ nhập văn bản để nhập thời gian.</string>
-    <string msgid="8471891128988107974" name="mc2_snackbar_pane_title">"Cảnh báo"</string>
     <string name="mtrl_badge_numberless_content_description">Thông báo mới</string>
     <string name="mtrl_checkbox_state_description_checked">Đã đánh dấu</string>
     <string name="mtrl_checkbox_state_description_indeterminate">Đã đánh dấu một phần</string>

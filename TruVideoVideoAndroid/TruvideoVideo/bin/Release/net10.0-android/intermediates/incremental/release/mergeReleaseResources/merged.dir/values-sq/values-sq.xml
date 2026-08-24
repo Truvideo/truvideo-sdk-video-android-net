@@ -206,7 +206,6 @@
     <string name="material_timepicker_pm">PD</string>
     <string name="material_timepicker_select_time">Zgjidh orën</string>
     <string name="material_timepicker_text_input_mode_description">Kalo te modaliteti i hyrjes së tekstit për hyrjen e kohës.</string>
-    <string msgid="8471891128988107974" name="mc2_snackbar_pane_title">"Sinjalizim"</string>
     <string name="mtrl_badge_numberless_content_description">Njoftim i ri</string>
     <string name="mtrl_checkbox_state_description_checked">E zgjedhur</string>
     <string name="mtrl_checkbox_state_description_indeterminate">Pjesërisht e zgjedhur</string>

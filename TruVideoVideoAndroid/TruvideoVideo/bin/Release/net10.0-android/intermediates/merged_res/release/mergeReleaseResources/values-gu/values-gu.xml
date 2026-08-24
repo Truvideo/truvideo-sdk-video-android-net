@@ -206,7 +206,6 @@
     <string name="material_timepicker_pm">PM</string>
     <string name="material_timepicker_select_time">સમય પસંદ કરો</string>
     <string name="material_timepicker_text_input_mode_description">સમય દાખલ કરવા માટે ટેક્સ્ટ ઇનપુટ મોડમાં સ્વિચ કરો.</string>
-    <string msgid="8471891128988107974" name="mc2_snackbar_pane_title">"અલર્ટ"</string>
     <string name="mtrl_badge_numberless_content_description">નવું નોટિફિકેશન</string>
     <string name="mtrl_checkbox_state_description_checked">ચેક કરેલું છે</string>
     <string name="mtrl_checkbox_state_description_indeterminate">આંશિક રીતે ચેક કરેલું છે</string>

@@ -9,7 +9,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        minSdk = 24
+        minSdk = 26
     }
 
 
@@ -23,20 +23,19 @@ android {
         }
     }
     buildFeatures{
-        //compose = true
         buildConfig = true
         compose = true
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     composeOptions{
         kotlinCompilerExtensionVersion = "1.5.1"
         //kotlinCompilerExtensionVersion = "1.5.3"
     }
     kotlinOptions {
-        jvmTarget = "11"
+        //jvmTarget = "17"
     }
     packaging {
         resources {
@@ -67,14 +66,15 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.runtime)
     implementation(libs.truvideo.sdk.android.video)
-    /*configurations["copyDependencies"].dependencies.add(
-        project.dependencies.create("com.github.truvideo:truvideo-sdk-android-video:79.1.8")
-    )*/
+    implementation(libs.androidx.startup.runtime)
+    configurations["copyDependencies"].dependencies.add(
+        project.dependencies.create("com.truvideo.com:sdk-video:1.0.5")
+    )
 
     implementation(libs.gson)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
+    //debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
 }

@@ -206,7 +206,6 @@
     <string name="material_timepicker_pm">PM</string>
     <string name="material_timepicker_select_time">ಸಮಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
     <string name="material_timepicker_text_input_mode_description">ಸಮಯವನ್ನು ನಮೂದಿಸಲು ಪಠ್ಯದ ನಮೂನೆಗೆ ಬದಲಿಸಿ.</string>
-    <string msgid="8471891128988107974" name="mc2_snackbar_pane_title">"ಎಚ್ಚರಿಕೆ"</string>
     <string name="mtrl_badge_numberless_content_description">ಹೊಸ ನೋಟಿಫಿಕೇಶನ್</string>
     <string name="mtrl_checkbox_state_description_checked">ಪರೀಕ್ಷಿಸಲಾಗಿದೆ</string>
     <string name="mtrl_checkbox_state_description_indeterminate">ಭಾಗಶಃ ಪರೀಕ್ಷಿಸಲಾಗಿದೆ</string>

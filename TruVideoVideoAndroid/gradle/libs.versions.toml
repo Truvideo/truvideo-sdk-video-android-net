@@ -1,7 +1,7 @@
 [versions]
 agp = "8.6.1"
-kotlin = "2.2.0"
-kotlinSerialization = "2.2.0"
+kotlin = "2.4.0"
+kotlinSerialization = "2.4.0"
 
 coreKtx = "1.15.0"
 appcompat = "1.7.0"
@@ -19,7 +19,8 @@ junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 
-truvideoSdkAndroidVideo = "79.1.8"
+truvideoSdkAndroidVideo = "1.0.5"
+startupRuntime = "1.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -44,8 +45,8 @@ gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-
-truvideo-sdk-android-video = { group = "com.github.truvideo", name = "truvideo-sdk-android-video", version.ref = "truvideoSdkAndroidVideo" }
+truvideo-sdk-android-video = { module = "com.truvideo.com:sdk-video", version.ref = "truvideoSdkAndroidVideo" }
+androidx-startup-runtime = { group = "androidx.startup", name = "startup-runtime", version.ref = "startupRuntime" }
 
 [plugins]
 android-application  = { id = "com.android.library", version.ref = "agp" }

@@ -1,10 +1,10 @@
 [
     {
-        "merged": "com.truvideo.video.TruvideoVideo-release-58:/layout-v23/exo_player_control_rewind_button.xml",
-        "source": "com.truvideo.video.TruvideoVideo-media3-ui-1.9.2-53:/layout-v23/exo_player_control_rewind_button.xml"
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/layout-v23/exo_player_control_ffwd_button.xml",
+        "source": "com.truvideo.video.TruvideoVideo-media3-ui-1.10.1-43:/layout-v23/exo_player_control_ffwd_button.xml"
     },
     {
-        "merged": "com.truvideo.video.TruvideoVideo-release-58:/layout-v23/exo_player_control_ffwd_button.xml",
-        "source": "com.truvideo.video.TruvideoVideo-media3-ui-1.9.2-53:/layout-v23/exo_player_control_ffwd_button.xml"
+        "merged": "com.truvideo.video.TruvideoVideo-release-59:/layout-v23/exo_player_control_rewind_button.xml",
+        "source": "com.truvideo.video.TruvideoVideo-media3-ui-1.10.1-43:/layout-v23/exo_player_control_rewind_button.xml"
     }
 ]

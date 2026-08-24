@@ -206,7 +206,6 @@
     <string name="material_timepicker_pm">अपराह्न</string>
     <string name="material_timepicker_select_time">समय चुनें</string>
     <string name="material_timepicker_text_input_mode_description">समय इनपुट के लिए लेख इनपुट मोड पर जाएं.</string>
-    <string msgid="8471891128988107974" name="mc2_snackbar_pane_title">"सूचना"</string>
     <string name="mtrl_badge_numberless_content_description">नई सूचना</string>
     <string name="mtrl_checkbox_state_description_checked">सही का निशान लगाया गया</string>
     <string name="mtrl_checkbox_state_description_indeterminate">कुछ विकल्प चुने गए</string>

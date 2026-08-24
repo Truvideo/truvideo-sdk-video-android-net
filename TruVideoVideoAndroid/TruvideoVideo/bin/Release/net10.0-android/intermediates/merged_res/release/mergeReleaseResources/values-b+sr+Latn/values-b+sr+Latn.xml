@@ -81,13 +81,13 @@
     <string name="exo_controls_fullscreen_enter_description">Pređi na ceo ekran</string>
     <string name="exo_controls_fullscreen_exit_description">Izađi iz celog ekrana</string>
     <string name="exo_controls_hide">Sakrij kontrole plejera</string>
-    <string name="exo_controls_next_description">Sledeća</string>
+    <string name="exo_controls_next_description">Dalje</string>
     <string name="exo_controls_overflow_hide_description">Sakrij dodatna podešavanja</string>
     <string name="exo_controls_overflow_show_description">Prikaži dodatna podešavanja</string>
     <string name="exo_controls_pause_description">Pauziraj</string>
     <string name="exo_controls_play_description">Pusti</string>
     <string name="exo_controls_playback_speed">Brzina</string>
-    <string name="exo_controls_previous_description">Prethodna</string>
+    <string name="exo_controls_previous_description">Nazad</string>
     <string name="exo_controls_repeat_all_description">Vaš režim: Ponovi sve. Uključite/isključite.</string>
     <string name="exo_controls_repeat_off_description">Vaš režim: Bez ponavljanja. Uključite/isključite.</string>
     <string name="exo_controls_repeat_one_description">Vaš režim: Ponovi jedno. Uključite/isključite.</string>
@@ -209,7 +209,6 @@
     <string name="material_timepicker_pm">PM</string>
     <string name="material_timepicker_select_time">Izaberite vreme</string>
     <string name="material_timepicker_text_input_mode_description">Pređite u režim unosa teksta radi unosa vremena.</string>
-    <string msgid="8471891128988107974" name="mc2_snackbar_pane_title">"Obaveštenje"</string>
     <string name="mtrl_badge_numberless_content_description">Novo obaveštenje</string>
     <string name="mtrl_checkbox_state_description_checked">Označeno</string>
     <string name="mtrl_checkbox_state_description_indeterminate">Delimično označeno</string>

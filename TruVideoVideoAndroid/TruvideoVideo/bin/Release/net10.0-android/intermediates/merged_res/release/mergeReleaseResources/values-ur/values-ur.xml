@@ -206,7 +206,6 @@
     <string name="material_timepicker_pm">رات</string>
     <string name="material_timepicker_select_time">وقت منتخب کریں</string>
     <string name="material_timepicker_text_input_mode_description">وقت ان پٹ کے لیے ٹیکسٹ ان پٹ وضع پر سوئچ کریں۔</string>
-    <string msgid="8471891128988107974" name="mc2_snackbar_pane_title">"الرٹ"</string>
     <string name="mtrl_badge_numberless_content_description">نئی اطلاع</string>
     <string name="mtrl_checkbox_state_description_checked">نشان زد ہو گیا</string>
     <string name="mtrl_checkbox_state_description_indeterminate">جزوی طور پر نشان زد</string>

@@ -212,7 +212,6 @@
     <string name="material_timepicker_pm">PM</string>
     <string name="material_timepicker_select_time">Выбор времени</string>
     <string name="material_timepicker_text_input_mode_description">Чтобы ввести время, перейдите в режим ввода текста.</string>
-    <string msgid="8471891128988107974" name="mc2_snackbar_pane_title">"Оповещение"</string>
     <string name="mtrl_badge_numberless_content_description">Новое уведомление</string>
     <string name="mtrl_checkbox_state_description_checked">Флажок установлен.</string>
     <string name="mtrl_checkbox_state_description_indeterminate">Флажки установлены частично.</string>
